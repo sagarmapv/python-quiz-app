@@ -37,7 +37,7 @@
             <div class="question-block" data-answer="{{ q.answer }}" data-topic="{{ q.topic }}">
                 <p class="question-text">{{ q.question }}</p>
                 {% for opt in q.options %}
-                    <label><input type="radio" name="q{{ loop.index0 }}" value="{{ opt }}"> {{ opt }}</label><br>
+                <input type="radio" name="q{{ loop.index0 }}_{{ loop.parent.index0 }}" value="{{ opt }}">
                 {% endfor %}
                 <br>
             </div>
