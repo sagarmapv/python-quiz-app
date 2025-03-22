@@ -1,0 +1,1206 @@
+[
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "easy",
+    "subtopic": "Primitive Types",
+    "question": "Which data type is used to store text?",
+    "options": [
+      "int",
+      "str",
+      "float",
+      "bool"
+    ],
+    "answer": "str"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "easy",
+    "subtopic": "Primitive Types",
+    "question": "What is the output of type(5)?",
+    "options": [
+      "<class 'str'>",
+      "<class 'float'>",
+      "<class 'int'>",
+      "<class 'bool'>"
+    ],
+    "answer": "<class 'int'>"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "easy",
+    "subtopic": "Primitive Types",
+    "question": "Which of these is a mutable type?",
+    "options": [
+      "tuple",
+      "list",
+      "str",
+      "int"
+    ],
+    "answer": "list"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "easy",
+    "subtopic": "Primitive Types",
+    "question": "Which of these types is unordered?",
+    "options": [
+      "list",
+      "tuple",
+      "set",
+      "str"
+    ],
+    "answer": "set"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "easy",
+    "subtopic": "Primitive Types",
+    "question": "What does type(True) return?",
+    "options": [
+      "<class 'bool'>",
+      "<class 'int'>",
+      "<class 'str'>",
+      "<class 'float'>"
+    ],
+    "answer": "<class 'bool'>"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "medium",
+    "subtopic": "Mutability & Type Logic",
+    "question": "Which of the following can be a dictionary key?",
+    "options": [
+      "[1,2,3]",
+      "(1,2)",
+      "{1:2}",
+      "set([1,2])"
+    ],
+    "answer": "(1,2)"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "medium",
+    "subtopic": "Mutability & Type Logic",
+    "question": "What is the result of bool([])?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Error"
+    ],
+    "answer": "False"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "medium",
+    "subtopic": "Mutability & Type Logic",
+    "question": "Which of these statements will fail?",
+    "options": [
+      "a = {1, 2, 3}",
+      "b = set([1,2])",
+      "c = {[1,2]: 'x'}",
+      "d = {'a': 1}"
+    ],
+    "answer": "c = {[1,2]: 'x'}"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "medium",
+    "subtopic": "Mutability & Type Logic",
+    "question": "Which data type does not allow duplicates?",
+    "options": [
+      "list",
+      "tuple",
+      "set",
+      "dict"
+    ],
+    "answer": "set"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "medium",
+    "subtopic": "Mutability & Type Logic",
+    "question": "Which function returns the type of a variable?",
+    "options": [
+      "typeof()",
+      "type()",
+      "gettype()",
+      "checktype()"
+    ],
+    "answer": "type()"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "hard",
+    "subtopic": "Type Mechanics & Edge Cases",
+    "question": "What is the output of `type(1/2)` in Python 3?",
+    "options": [
+      "<class 'int'>",
+      "<class 'float'>",
+      "<class 'decimal.Decimal'>",
+      "<class 'double'>"
+    ],
+    "answer": "<class 'float'>"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "hard",
+    "subtopic": "Type Mechanics & Edge Cases",
+    "question": "Which of these types is NOT iterable?",
+    "options": [
+      "list",
+      "dict",
+      "int",
+      "set"
+    ],
+    "answer": "int"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "hard",
+    "subtopic": "Type Mechanics & Edge Cases",
+    "question": "Which method checks if all characters in a string are alphabetic?",
+    "options": [
+      "isalpha()",
+      "isalnum()",
+      "isdecimal()",
+      "isdigit()"
+    ],
+    "answer": "isalpha()"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "hard",
+    "subtopic": "Type Mechanics & Edge Cases",
+    "question": "What will `len({'a': 1, 'b': 2})` return?",
+    "options": [
+      "2",
+      "4",
+      "1",
+      "Error"
+    ],
+    "answer": "2"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Data Types",
+    "level": "hard",
+    "subtopic": "Type Mechanics & Edge Cases",
+    "question": "What is the result of `None == 0`?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Error"
+    ],
+    "answer": "False"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "easy",
+    "subtopic": "Basic Indexing",
+    "question": "What does `my_list[1:4]` return if `my_list = [0, 1, 2, 3, 4, 5]`?",
+    "options": [
+      "[1, 2, 3]",
+      "[2, 3, 4]",
+      "[1, 2, 3, 4]",
+      "[0, 1, 2, 3]"
+    ],
+    "answer": "[1, 2, 3]"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "easy",
+    "subtopic": "Basic Indexing",
+    "question": "What is the output of `my_str[:3]` if `my_str = 'Python'`?",
+    "options": [
+      "Pyt",
+      "Pyth",
+      "PytH",
+      "Py"
+    ],
+    "answer": "Pyt"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "easy",
+    "subtopic": "Basic Indexing",
+    "question": "How do you get the last character of a string `s`?",
+    "options": [
+      "s[1]",
+      "s[-1]",
+      "s[len(s)]",
+      "s[0]"
+    ],
+    "answer": "s[-1]"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "easy",
+    "subtopic": "Basic Indexing",
+    "question": "What is the output of `s[::2]` for `s = 'abcdef'`?",
+    "options": [
+      "ace",
+      "bdf",
+      "abc",
+      "def"
+    ],
+    "answer": "ace"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "medium",
+    "subtopic": "Step & Reverse Slicing",
+    "question": "What does `s[::-1]` do if `s = 'Python'`?",
+    "options": [
+      "Reverses the string",
+      "Syntax Error",
+      "Skips characters",
+      "Returns empty string"
+    ],
+    "answer": "Reverses the string"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "medium",
+    "subtopic": "Step & Reverse Slicing",
+    "question": "Which of these returns every second element of the list in reverse?",
+    "options": [
+      "s[::-2]",
+      "s[::2]",
+      "s[-2:]",
+      "s[2::-1]"
+    ],
+    "answer": "s[::-2]"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "medium",
+    "subtopic": "Step & Reverse Slicing",
+    "question": "What is the result of `s[1:-1]` if `s = 'Python'`?",
+    "options": [
+      "ytho",
+      "ython",
+      "Pytho",
+      "yth"
+    ],
+    "answer": "ytho"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "medium",
+    "subtopic": "Step & Reverse Slicing",
+    "question": "What is the output of `s[1:5:2]` if `s = 'abcdef'`?",
+    "options": [
+      "bd",
+      "be",
+      "ce",
+      "bd"
+    ],
+    "answer": "bd"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "hard",
+    "subtopic": "Complex Patterns",
+    "question": "Which slicing expression reverses only the first 3 elements of a list `lst`?",
+    "options": [
+      "lst[:3][::-1] + lst[3:]",
+      "lst[::-1][:3] + lst[3:]",
+      "lst[3:] + lst[:3][::-1]",
+      "lst[3:] + lst[::-1][:3]"
+    ],
+    "answer": "lst[:3][::-1] + lst[3:]"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "hard",
+    "subtopic": "Complex Patterns",
+    "question": "What does `s[::0]` return?",
+    "options": [
+      "Empty string",
+      "Syntax Error",
+      "Runtime Error",
+      "ValueError"
+    ],
+    "answer": "ValueError"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "hard",
+    "subtopic": "Complex Patterns",
+    "question": "What is the output of `s[-100:100]` if `s = 'Python'`?",
+    "options": [
+      "'Python'",
+      "''",
+      "Error",
+      "'Pytho'"
+    ],
+    "answer": "'Python'"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Slicing",
+    "level": "hard",
+    "subtopic": "Complex Patterns",
+    "question": "Which of these slices skips every 3rd character starting from index 1?",
+    "options": [
+      "s[1::3]",
+      "s[::3]",
+      "s[3::1]",
+      "s[1:3]"
+    ],
+    "answer": "s[1::3]"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "easy",
+    "subtopic": "For & While Basics",
+    "question": "Which loop is used to iterate over a sequence?",
+    "options": [
+      "for",
+      "while",
+      "do-while",
+      "loop"
+    ],
+    "answer": "for"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "easy",
+    "subtopic": "For & While Basics",
+    "question": "What is the output of `for i in range(3): print(i)`?",
+    "options": [
+      "0 1 2",
+      "1 2 3",
+      "0 1 2 3",
+      "0 2"
+    ],
+    "answer": "0 1 2"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "easy",
+    "subtopic": "For & While Basics",
+    "question": "Which keyword is used to skip an iteration?",
+    "options": [
+      "skip",
+      "pass",
+      "continue",
+      "stop"
+    ],
+    "answer": "continue"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "easy",
+    "subtopic": "For & While Basics",
+    "question": "What does `range(5)` produce?",
+    "options": [
+      "[1,2,3,4,5]",
+      "[0,1,2,3,4]",
+      "[0,1,2,3,4,5]",
+      "[5]"
+    ],
+    "answer": "[0,1,2,3,4]"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "medium",
+    "subtopic": "Nested Loops",
+    "question": "What is the result of `sum(range(1,5))`?",
+    "options": [
+      "10",
+      "15",
+      "5",
+      "None"
+    ],
+    "answer": "10"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "medium",
+    "subtopic": "Nested Loops",
+    "question": "What is the output of:\n```python\nfor i in range(2):\n  for j in range(2):\n    print(i + j)\n```",
+    "options": [
+      "0 1 1 2",
+      "0 1 2 3",
+      "0 1 1 2",
+      "0 1 0 1"
+    ],
+    "answer": "0 1 1 2"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "medium",
+    "subtopic": "Nested Loops",
+    "question": "How many times will 'Hello' be printed?\n```python\nfor i in range(2):\n  for j in range(3):\n    print('Hello')\n```",
+    "options": [
+      "2",
+      "3",
+      "6",
+      "5"
+    ],
+    "answer": "6"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "medium",
+    "subtopic": "Nested Loops",
+    "question": "What is the output of:\n```python\nx = 0\nwhile x < 3:\n  print(x)\n  x += 1\n```",
+    "options": [
+      "1 2 3",
+      "0 1 2",
+      "0 1 2 3",
+      "None"
+    ],
+    "answer": "0 1 2"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "hard",
+    "subtopic": "Control Flow",
+    "question": "Which of the following creates an infinite loop?",
+    "options": [
+      "while True:",
+      "for i in range(10):",
+      "while False:",
+      "for i in [1,2,3]:"
+    ],
+    "answer": "while True:"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "hard",
+    "subtopic": "Control Flow",
+    "question": "What does the following do?\n```python\nfor i in range(5):\n  if i == 3:\n    break\n  print(i)\n```",
+    "options": [
+      "0 1 2 3 4",
+      "0 1 2",
+      "1 2 3",
+      "0 1 2 3"
+    ],
+    "answer": "0 1 2"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "hard",
+    "subtopic": "Control Flow",
+    "question": "Which statement is true about `pass`?",
+    "options": [
+      "It exits the loop",
+      "It skips current iteration",
+      "It does nothing",
+      "It ends the program"
+    ],
+    "answer": "It does nothing"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "hard",
+    "subtopic": "Control Flow",
+    "question": "What is the output of:\n```python\nfor i in range(1,4):\n  if i == 2:\n    continue\n  print(i)\n```",
+    "options": [
+      "1 2 3",
+      "1 3",
+      "2 3",
+      "1 2"
+    ],
+    "answer": "1 3"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Loops",
+    "level": "hard",
+    "subtopic": "Control Flow",
+    "question": "How many times will this loop run?\n```python\nx = 0\nwhile x < 3:\n  x += 1\n  if x == 2:\n    continue\n  print(x)\n```",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "0"
+    ],
+    "answer": "2"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "easy",
+    "subtopic": "If-Else Basics",
+    "question": "What keyword is used for decision making in Python?",
+    "options": [
+      "if",
+      "switch",
+      "case",
+      "match"
+    ],
+    "answer": "if"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "easy",
+    "subtopic": "If-Else Basics",
+    "question": "Which of the following is the correct syntax for an if statement?",
+    "options": [
+      "if x > 5 then:",
+      "if (x > 5)",
+      "if x > 5:",
+      "if x > 5 {}"
+    ],
+    "answer": "if x > 5:"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "easy",
+    "subtopic": "If-Else Basics",
+    "question": "Which block executes if condition is False?",
+    "options": [
+      "if",
+      "else",
+      "elif",
+      "None"
+    ],
+    "answer": "else"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "medium",
+    "subtopic": "Boolean Logic",
+    "question": "What will be the result of `bool('False')`?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Error"
+    ],
+    "answer": "True"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "medium",
+    "subtopic": "Boolean Logic",
+    "question": "Which of the following values is considered False in a conditional?",
+    "options": [
+      "0",
+      "[]",
+      "None",
+      "All of these"
+    ],
+    "answer": "All of these"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "medium",
+    "subtopic": "Boolean Logic",
+    "question": "Which operator has higher precedence?",
+    "options": [
+      "and",
+      "or",
+      "not",
+      "=="
+    ],
+    "answer": "not"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "hard",
+    "subtopic": "Short-Circuit & Nested",
+    "question": "What is short-circuit evaluation in Python?",
+    "options": [
+      "Skipping part of a loop",
+      "Skipping part of a boolean expression",
+      "Skipping else blocks",
+      "None of the above"
+    ],
+    "answer": "Skipping part of a boolean expression"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "hard",
+    "subtopic": "Short-Circuit & Nested",
+    "question": "What is the output of `True or False and False`?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Error"
+    ],
+    "answer": "True"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "hard",
+    "subtopic": "Short-Circuit & Nested",
+    "question": "What does `x if x > 10 else 0` mean?",
+    "options": [
+      "If x > 10, return x, else 0",
+      "Return 0 always",
+      "Error",
+      "None"
+    ],
+    "answer": "If x > 10, return x, else 0"
+  },
+  {
+    "section": "Core Python",
+    "topic": "Conditionals",
+    "level": "hard",
+    "subtopic": "Short-Circuit & Nested",
+    "question": "What is the output of:\n```python\nx = 5\nif x > 3:\n  if x < 10:\n    print('Yes')\n```",
+    "options": [
+      "Yes",
+      "No",
+      "Error",
+      "None"
+    ],
+    "answer": "Yes"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "easy",
+    "subtopic": "Open & Read Basics",
+    "question": "Which mode is used to open a file for reading?",
+    "options": [
+      "'r'",
+      "'w'",
+      "'a'",
+      "'x'"
+    ],
+    "answer": "'r'"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "easy",
+    "subtopic": "Open & Read Basics",
+    "question": "What does `readlines()` return?",
+    "options": [
+      "A string",
+      "List of lines",
+      "Characters",
+      "None"
+    ],
+    "answer": "List of lines"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "easy",
+    "subtopic": "Open & Read Basics",
+    "question": "Which statement is used to open a file safely?",
+    "options": [
+      "with open(...) as f:",
+      "open(...)",
+      "file.open(...)",
+      "read(file)"
+    ],
+    "answer": "with open(...) as f:"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "medium",
+    "subtopic": "Write & Append",
+    "question": "What happens when you open a file in 'w' mode?",
+    "options": [
+      "Appends to the file",
+      "Overwrites the file",
+      "Reads the file",
+      "Creates directory"
+    ],
+    "answer": "Overwrites the file"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "medium",
+    "subtopic": "Write & Append",
+    "question": "Which mode is used to append content to a file?",
+    "options": [
+      "'r'",
+      "'w'",
+      "'a'",
+      "'x'"
+    ],
+    "answer": "'a'"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "medium",
+    "subtopic": "Write & Append",
+    "question": "What does `write()` return?",
+    "options": [
+      "Number of characters written",
+      "True",
+      "None",
+      "The file object"
+    ],
+    "answer": "Number of characters written"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "hard",
+    "subtopic": "Binary & Edge Cases",
+    "question": "Which mode is used for binary reading?",
+    "options": [
+      "'rb'",
+      "'bw'",
+      "'br'",
+      "'b'"
+    ],
+    "answer": "'rb'"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "hard",
+    "subtopic": "Binary & Edge Cases",
+    "question": "What happens if a file doesn\u2019t exist in 'r' mode?",
+    "options": [
+      "It creates a new file",
+      "It raises an error",
+      "It opens an empty file",
+      "It crashes the OS"
+    ],
+    "answer": "It raises an error"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "File Handling",
+    "level": "hard",
+    "subtopic": "Binary & Edge Cases",
+    "question": "Which function is used to check if file exists?",
+    "options": [
+      "os.isfile()",
+      "exists()",
+      "os.path.exists()",
+      "file.check()"
+    ],
+    "answer": "os.path.exists()"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "easy",
+    "subtopic": "Basics & Reversal",
+    "question": "Which method is used to split a string into a list?",
+    "options": [
+      "split()",
+      "join()",
+      "replace()",
+      "cut()"
+    ],
+    "answer": "split()"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "easy",
+    "subtopic": "Basics & Reversal",
+    "question": "How to reverse a string `s` in Python?",
+    "options": [
+      "s[::-1]",
+      "reverse(s)",
+      "s.reverse()",
+      "s[-1:0]"
+    ],
+    "answer": "s[::-1]"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "easy",
+    "subtopic": "Basics & Reversal",
+    "question": "What is the output of `'a-b-c'.split('-')`?",
+    "options": [
+      "['a','b','c']",
+      "['abc']",
+      "['a-b-c']",
+      "Error"
+    ],
+    "answer": "['a','b','c']"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "medium",
+    "subtopic": "Substrings & Palindrome",
+    "question": "What is a palindrome?",
+    "options": [
+      "String that reads same forward and backward",
+      "String with even length",
+      "String starting with capital",
+      "None"
+    ],
+    "answer": "String that reads same forward and backward"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "medium",
+    "subtopic": "Substrings & Palindrome",
+    "question": "What does `'hello'.find('e')` return?",
+    "options": [
+      "1",
+      "0",
+      "-1",
+      "True"
+    ],
+    "answer": "1"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "medium",
+    "subtopic": "Substrings & Palindrome",
+    "question": "How to check if 'abc' is in 'abcdef'?",
+    "options": [
+      "'abc' in 'abcdef'",
+      "'abcdef'.contains('abc')",
+      "find('abc')",
+      "search('abc')"
+    ],
+    "answer": "'abc' in 'abcdef'"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "hard",
+    "subtopic": "Tricky Patterns",
+    "question": "What does `' '.join(['a','b','c'])` return?",
+    "options": [
+      "'a b c'",
+      "['a','b','c']",
+      "'abc'",
+      "'a-b-c'"
+    ],
+    "answer": "'a b c'"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "hard",
+    "subtopic": "Tricky Patterns",
+    "question": "How many times will `count('a')` return for 'banana'?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "section": "I/O & Strings",
+    "topic": "String Tricks",
+    "level": "hard",
+    "subtopic": "Tricky Patterns",
+    "question": "What does `'Python'[::3]` return?",
+    "options": [
+      "'Ph'",
+      "'Pto'",
+      "'Py'",
+      "'Ptn'"
+    ],
+    "answer": "'Ph'"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "easy",
+    "subtopic": "Arrays & Shape",
+    "question": "Which function is used to create a NumPy array?",
+    "options": [
+      "array()",
+      "np.array()",
+      "numpy()",
+      "list()"
+    ],
+    "answer": "np.array()"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "easy",
+    "subtopic": "Arrays & Shape",
+    "question": "What does `np.zeros((2,2))` return?",
+    "options": [
+      "2x2 array of zeros",
+      "Empty array",
+      "Error",
+      "2x2 array of ones"
+    ],
+    "answer": "2x2 array of zeros"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "easy",
+    "subtopic": "Arrays & Shape",
+    "question": "What is `np.arange(3)`?",
+    "options": [
+      "[0,1,2]",
+      "[1,2,3]",
+      "[0,1,2,3]",
+      "Error"
+    ],
+    "answer": "[0,1,2]"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "medium",
+    "subtopic": "Slicing & Masking",
+    "question": "What does `a[1:3]` do in NumPy?",
+    "options": [
+      "Slicing",
+      "Masking",
+      "Matrix multiplication",
+      "Transpose"
+    ],
+    "answer": "Slicing"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "medium",
+    "subtopic": "Slicing & Masking",
+    "question": "Which of these gives boolean indexing?",
+    "options": [
+      "a[a > 0]",
+      "a[1:2]",
+      "a[::2]",
+      "a + 1"
+    ],
+    "answer": "a[a > 0]"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "medium",
+    "subtopic": "Slicing & Masking",
+    "question": "What is broadcasting in NumPy?",
+    "options": [
+      "Automatic dimension alignment",
+      "Matrix inverse",
+      "Reshaping",
+      "Transposing"
+    ],
+    "answer": "Automatic dimension alignment"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "hard",
+    "subtopic": "Operations & Aggregates",
+    "question": "What does `np.dot(a, b)` do?",
+    "options": [
+      "Matrix multiplication",
+      "Addition",
+      "Hadamard product",
+      "Broadcasting"
+    ],
+    "answer": "Matrix multiplication"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "hard",
+    "subtopic": "Operations & Aggregates",
+    "question": "Which of these returns column-wise sum?",
+    "options": [
+      "np.sum(a, axis=0)",
+      "np.sum(a, axis=1)",
+      "np.mean(a)",
+      "np.min(a)"
+    ],
+    "answer": "np.sum(a, axis=0)"
+  },
+  {
+    "section": "Libraries",
+    "topic": "NumPy",
+    "level": "hard",
+    "subtopic": "Operations & Aggregates",
+    "question": "What is the output of `a.T` for a 2D array?",
+    "options": [
+      "Transpose",
+      "Flatten",
+      "Broadcasted array",
+      "Error"
+    ],
+    "answer": "Transpose"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "easy",
+    "subtopic": "Series & DataFrames",
+    "question": "Which function creates a DataFrame?",
+    "options": [
+      "pd.DataFrame()",
+      "pd.Frame()",
+      "DataFrame()",
+      "pd.df()"
+    ],
+    "answer": "pd.DataFrame()"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "easy",
+    "subtopic": "Series & DataFrames",
+    "question": "Which method reads a CSV file?",
+    "options": [
+      "read_csv()",
+      "open_csv()",
+      "pd.open()",
+      "read()"
+    ],
+    "answer": "read_csv()"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "easy",
+    "subtopic": "Series & DataFrames",
+    "question": "What is `df.head()` used for?",
+    "options": [
+      "Show first rows",
+      "Show last rows",
+      "Show index",
+      "Show shape"
+    ],
+    "answer": "Show first rows"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "medium",
+    "subtopic": "Filtering & Access",
+    "question": "What does `df.loc[0]` return?",
+    "options": [
+      "Row with index 0",
+      "Column 0",
+      "Error",
+      "Value at 0"
+    ],
+    "answer": "Row with index 0"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "medium",
+    "subtopic": "Filtering & Access",
+    "question": "Difference between `loc` and `iloc`?",
+    "options": [
+      "Label vs position",
+      "Both are same",
+      "Error",
+      "None"
+    ],
+    "answer": "Label vs position"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "medium",
+    "subtopic": "Filtering & Access",
+    "question": "How to filter rows where column 'A' > 5?",
+    "options": [
+      "df[df['A'] > 5]",
+      "df(A > 5)",
+      "df.where('A' > 5)",
+      "df.select(A > 5)"
+    ],
+    "answer": "df[df['A'] > 5]"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "hard",
+    "subtopic": "Grouping & Aggregation",
+    "question": "What does `df.groupby('col').sum()` do?",
+    "options": [
+      "Group by col and sum values",
+      "Sum col only",
+      "Group only",
+      "Nothing"
+    ],
+    "answer": "Group by col and sum values"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "hard",
+    "subtopic": "Grouping & Aggregation",
+    "question": "How to count rows per group in Pandas?",
+    "options": [
+      "df.groupby('col').count()",
+      "df.count()",
+      "df.value_count()",
+      "df.group_count()"
+    ],
+    "answer": "df.groupby('col').count()"
+  },
+  {
+    "section": "Libraries",
+    "topic": "Pandas",
+    "level": "hard",
+    "subtopic": "Grouping & Aggregation",
+    "question": "Which function merges two DataFrames?",
+    "options": [
+      "merge()",
+      "concat()",
+      "append()",
+      "groupby()"
+    ],
+    "answer": "merge()"
+  }
+]

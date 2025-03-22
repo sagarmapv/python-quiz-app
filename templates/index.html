@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Topics</title>
+</head>
+<body>
+    <h1>Select a Topic</h1>
+    <ul>
+        {% for topic, count in topics.items() %}
+            <li><a href="/quiz/{{ topic }}">{{ topic }} ({{ count }} questions)</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

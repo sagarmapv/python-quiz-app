@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz - {{ topic }}</title>
+    <script>
+    function submitQuiz() {
+        let responses = [];
+        document.querySelectorAll(".question-block").forEach(block => {
+            let qText = block.querySelector(".question-text").innerText;
+            let selected = block.querySelector("input[type='radio']:checked");
+            let answer = block.getAttribute("data-answer");
+            let topic = block.getAttribute("data-topic");
+            responses.push({
+                question: qText,
+                selected: selected ? selected.value : null,
+                answer: answer,
+                topic: topic
+            });
+        });
+
+        fetch("/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ responses })
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("You scored " + data.score + " out of " + data.total);
+        });
+    }
+    </script>
+</head>
+<body>
+    <h1>{{ topic }} Quiz</h1>
+    <form onsubmit="event.preventDefault(); submitQuiz();">
+        {% for q in questions %}
+            <div class="question-block" data-answer="{{ q.answer }}" data-topic="{{ q.topic }}">
+                <p class="question-text">{{ q.question }}</p>
+                {% for opt in q.options %}
+                    <label><input type="radio" name="q{{ loop.index0 }}" value="{{ opt }}"> {{ opt }}</label><br>
+                {% endfor %}
+                <br>
+            </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
