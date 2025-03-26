@@ -34,15 +34,17 @@
     <h1>{{ topic }} Quiz</h1>
     <form onsubmit="event.preventDefault(); submitQuiz();">
         {% for q in questions %}
-            <div class="question-block" data-answer="{{ q.answer }}" data-topic="{{ q.topic }}">
-                <p class="question-text">{{ q.question }}</p>
-                {% for opt in q.options %}
-                <input type="radio" name="q{{ loop.index0 }}_{{ loop.parent.index0 }}" value="{{ opt }}">
-                {% endfor %}
-                <br>
-            </div>
-        {% endfor %}
-        <button type="submit">Submit</button>
+        {% set qid = loop.index0 %}
+        <div class="question-block" data-answer="{{ q.answer }}" data-topic="{{ q.topic }}">
+          <p class="question-text">{{ q.question }}</p>
+          {% for opt in q.options %}
+            <label>
+              <input type="radio" name="q{{ qid }}" value="{{ opt }}"> {{ opt }}
+            </label><br>
+          {% endfor %}
+          <br>
+        </div>
+      {% endfor %}        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

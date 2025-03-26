@@ -22,8 +22,9 @@ def home():
 
 @app.route("/quiz/<topic>")
 def quiz(topic):
-    topic_questions = [q for q in all_questions if q["topic"] == topic]
-    return render_template("quiz.html", topic=topic, questions=topic_questions)
+    topic_questions = [q for q in all_questions if q["topic"].lower() == topic.lower()]
+    all_topics = list(get_topics().keys())
+    return render_template("quiz_one_by_one.html", topic=topic, questions=topic_questions, topic_sequence=all_topics)
 
 @app.route("/submit", methods=["POST"])
 def submit():

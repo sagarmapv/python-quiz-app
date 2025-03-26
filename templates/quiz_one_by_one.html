@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ topic }} Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        #progress-status {
+            display: flex;
+            gap: 3px;
+            margin: 10px 0;
+        }
+        .indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+        .indicator.correct {
+            background-color: #4caf50;
+        }
+        .indicator.wrong {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ topic }} Quiz</h1>
+
+    <div class="nav-buttons">
+        <a href="/" class="btn" onclick="localStorageReload()">🏠 Back to Topics</a>
+    </div>
+
+    <div id="progress-bar-wrapper">
+        <div id="progress-status"></div>
+        <div id="progress-bar"></div>
+        <p id="progress-text"></p>
+    </div>
+
+    <div id="quiz-wrapper">
+        <div id="question-container"></div>
+        <div class="quiz-buttons">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <script id="quiz-data" type="application/json">
+        {{ questions | tojson | safe }}
+    </script>
+
+    <script>
+        let questions = JSON.parse(document.getElementById("quiz-data").textContent || "[]");
+        let currentIndex = 0;
+        let responses = [];
+        let currentQuestion = {};
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        shuffleArray(questions);
+
+        //const topicSequence = ["Data Types", "Loops", "Conditionals", "Strings", "Slicing", "File Handling", "NumPy", "Pandas"];
+        const topicSequence = {{ topic_sequence | tojson | safe }};
+        const currentTopic = "{{ topic }}";
+        let currentIndexInSequence = topicSequence.findIndex(t => t.toLowerCase() === currentTopic.toLowerCase());
+        let nextTopic = currentIndexInSequence >= 0 && currentIndexInSequence < topicSequence.length - 1
+            ? topicSequence[currentIndexInSequence + 1]
+            : null;
+
+        function analyzeResponses() {
+            let result = {
+                correct: 0,
+                wrong: 0,
+                skipped: 0,
+                wrongResponses: []
+            };
+
+            for (let i = 0; i < questions.length; i++) {
+                const r = responses[i];
+                if (r) {
+                    if (r.selected === r.answer) {
+                        result.correct++;
+                    } else {
+                        result.wrong++;
+                        result.wrongResponses.push({ index: i, ...r });
+                    }
+                } else {
+                    result.skipped++;
+                }
+            }
+            return result;
+        }
+
+        function renderProgressBar(results) {
+            const statusBar = document.getElementById("progress-status");
+            statusBar.innerHTML = "";
+
+            for (let i = 0; i < questions.length; i++) {
+                let span = document.createElement("span");
+                if (responses[i]) {
+                    if (responses[i].selected === responses[i].answer) {
+                        span.className = "indicator correct";
+                    } else {
+                        span.className = "indicator wrong";
+                    }
+                } else {
+                    span.className = "indicator";
+                }
+                statusBar.appendChild(span);
+            }
+
+            const progress = ((currentIndex + 1) / questions.length) * 100;
+            document.getElementById("progress-bar").style.width = progress + "%";
+            document.getElementById("progress-text").textContent = "Question " + (currentIndex + 1) + " of " + questions.length;
+        }
+
+        function updateProgress() {
+            const results = analyzeResponses();
+            renderProgressBar(results);
+        }
+
+        function renderQuestion() {
+            const q = questions[currentIndex];
+            if (!q) {
+                document.getElementById("question-container").innerHTML = "<p>No questions found.</p>";
+                return;
+            }
+
+            currentQuestion = {
+                question: q.question,
+                answer: q.answer,
+                topic: q.topic,
+                subtopic: q.subtopic
+            };
+
+            const shuffledOptions = [...q.options];
+            shuffleArray(shuffledOptions);
+
+            let optionsHTML = "";
+            for (let opt of shuffledOptions) {
+                let encodedOpt = opt
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+                optionsHTML += `
+                    <label>
+                        <input type="radio" name="option" value="${encodedOpt}"> ${encodedOpt}
+                    </label><br>
+                `;
+            }
+
+            document.getElementById("question-container").innerHTML = `
+                <div class="question-block">
+                    <p class="question-text"><strong>Q${currentIndex + 1}:</strong> ${q.question}</p>
+                    ${optionsHTML}
+                </div>
+            `;
+
+            updateProgress();
+            document.getElementById("prev-btn").disabled = currentIndex === 0;
+            document.getElementById("next-btn").innerText =
+                currentIndex === questions.length - 1 ? "Submit" : "Next";
+        }
+
+        function saveResponse() {
+            const selected = document.querySelector("input[name='option']:checked");
+            responses[currentIndex] = {
+                question: currentQuestion.question,
+                selected: selected ? selected.value : null,
+                answer: currentQuestion.answer,
+                topic: currentQuestion.topic,
+                subtopic: currentQuestion.subtopic
+            };
+        }
+
+        function nextQuestion() {
+            saveResponse();
+            if (currentIndex < questions.length - 1) {
+                currentIndex++;
+                renderQuestion();
+            } else {
+                submitQuiz();
+            }
+        }
+
+        function prevQuestion() {
+            saveResponse();
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        function submitQuiz() {
+            const results = analyzeResponses();
+            fetch("/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ responses })
+            })
+            .then(res => res.json())
+            .then(data => {
+                const wrongSubtopics = [...new Set(data.details.filter(q => !q.correct).map(q => q.subtopic))];
+
+                let wrongListHTML = "<h3>❌ All Incorrect Questions:</h3><ul>";
+                for (let w of results.wrongResponses) {
+                    const triedAndWrong = w.selected && w.selected !== w.answer;
+                    const skipped = !w.selected;
+                    wrongListHTML += `
+                        <li>
+                            <strong>Q:</strong> ${w.question}<br>
+                            <span style="color:red;">Your answer:</span> ${w.selected || "No answer"}<br>
+                            <span style="color:green;">Correct answer:</span> ${typeof w.answer !== "undefined" ? w.answer : "Not recorded"}<br>
+                            <em style="color:${triedAndWrong ? '#ff9800' : '#f44336'};">
+                                ${triedAndWrong ? "🟠 Tried but incorrect" : skipped ? "🔴 Skipped" : ""}
+                            </em>
+                        </li><br>
+                    `;
+                }
+                wrongListHTML += "</ul>";
+
+                const feedbackHTML = wrongSubtopics && wrongSubtopics.length > 0
+                    ? `<p>🧠 Suggested Review Areas: ${wrongSubtopics.join(", ")}</p>`
+                    : `<p>🎉 Great job! You got all questions correct!</p>`;
+
+                const nextButton = nextTopic
+                    ? `<a href="/quiz/${encodeURIComponent(nextTopic)}" class="btn">👉 Continue to Next Topic (${nextTopic})</a>`
+                    : "";
+
+                const storageKey = "quiz_" + currentTopic.toLowerCase().replace(/\s+/g, "_");
+                localStorage.setItem(storageKey, JSON.stringify({
+                    score: results.correct,
+                    total: questions.length
+                }));
+
+                document.getElementById("quiz-wrapper").innerHTML = `
+                    <h2>✅ You scored ${results.correct} out of ${questions.length}</h2>
+                    ${feedbackHTML}
+                    ${wrongListHTML}
+                    <a href="/" class="btn" onclick="localStorageReload()">🏠 Back to Topics</a>
+                    ${nextButton}
+                `;
+            });
+        }
+
+        function restartQuiz() {
+            currentIndex = 0;
+            responses = [];
+            shuffleArray(questions);
+            renderQuestion();
+            updateProgress();
+        }
+
+        function localStorageReload() {
+            window.location.href = "/";
+            window.location.reload();
+        }
+
+        document.getElementById("next-btn").addEventListener("click", nextQuestion);
+        document.getElementById("prev-btn").addEventListener("click", prevQuestion);
+        document.addEventListener("DOMContentLoaded", renderQuestion);
+    </script>
+</body>
+</html>

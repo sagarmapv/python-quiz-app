@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quiz Topics</title>
+    <title>Python Quiz Topics</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .topic-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .topic-score {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Select a Topic</h1>
-    <ul>
+    <h1>Python Quiz Topics</h1>
+    <div id="topic-list">
         {% for topic, count in topics.items() %}
-            <li><a href="/quiz/{{ topic }}">{{ topic }} ({{ count }} questions)</a></li>
+        <div class="topic-row">
+            <a href="/quiz/{{ topic }}">{{ topic }} ({{ count }} questions)</a>
+            <span class="topic-score" id="score-{{ topic | lower | replace(' ', '_') }}">⚪ Not attempted</span>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const topicSpans = document.querySelectorAll(".topic-score");
+            topicSpans.forEach(span => {
+                const id = span.id.replace("score-", "");
+                const stored = localStorage.getItem("quiz_" + id);
+                if (stored) {
+                    const data = JSON.parse(stored);
+                    span.textContent = `✅ ${data.score} / ${data.total}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
